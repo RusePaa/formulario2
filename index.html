@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Registro para el Evento</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Formulario de Registro para un Evento de Conferencias y Talleres</h1>
+    <form action="procesar_formulario.php" method="post" enctype="multipart/form-data">
+        <label class="titulo">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email" class="titulo">Correo electrónico (gmail):</label>
+        <input type="email" id="email" pattern=".+@gmail\.com" size="30" required />
+
+        <label for="email" class="titulo">Teléfono:</label>
+        <input type="tel" id="telefono" pattern="[0-9]{9}" placeholder="(+34)" size="30" required />
+
+        <label for="acompanantes" class="titulo">Edad:</label>
+        <input type="number" id="edad" name="edad" min="18" max="999" placeholder="mayor de 18 años"><br>
+
+        <label for="genero" class="titulo">Género:</label>
+        <select id="genero" name="genero">
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+            <option value="noDecirlo">Prefiero no decirlo</option>
+        </select><br>
+
+        <label for="residencia" class="titulo">País de residencia:</label>
+        <select id="residencia" name="residencia">
+            <option value="espanol">Español</option>
+            <option value="peruano">Peruano</option>
+            <option value="brasileiro">Brasileño</option>
+            <option value="alemania">Alemania</option>
+        </select><br>
+
+        <label for="ocupacion" class="titulo">Profesión u Ocupación:</label>
+        <input type="text" id="ocupacion" name="ocupacion" required><br>
+
+        <label for="educacion" class="titulo">Nivel de Educación:</label>
+        <select id="educacion" name="educacion">
+            <option value="primaria">Primaria</option>
+            <option value="secundaria">Secundaria</option>
+            <option value="universidad">Universidad</option>
+            <option value="posgrado">Posgrado</option>
+        </select><br>
+
+        <label class="titulo">Preferencias Dietéticas:</label>
+        <input type="checkbox">Vegetariano
+        <input type="checkbox">Vegano
+        <input type="checkbox">Sin gluten
+
+        <label for="transporte" class="titulo">Preferencia de Transporte:</label>
+        <select id="transporte" name="transporte">
+            <option value="coche">Coche</option>
+            <option value="transporte-publico">Transporte Público</option>
+            <option value="caminar">Caminar</option>
+        </select><br>
+
+        <label class="titulo">Idioma Preferido:</label>
+        <label for="espanol"><input type="radio" id="espanol" name="idioma" value="espanol">Español</label>
+        <label for="ingles"><input type="radio" id="ingles" name="idioma" value="ingles" checked>Inglés</label>
+        <label for="frances"><input type="radio" id="frances" name="idioma" value="frances">Francés</label><br>
+
+        <label class="titulo">Conferencias Elegidas (mínimo 3 opciones):</label>
+        <label for="conferencia1"><input type="checkbox" id="conferencia1" name="conferencias[]" value="conferencia1">Conferencia 1</label>
+        <label for="conferencia2"><input type="checkbox" id="conferencia2" name="conferencias[]" value="conferencia2">Conferencia 2</label>
+        <label for="conferencia3"><input type="checkbox" id="conferencia3" name="conferencias[]" value="conferencia3">Conferencia 3</label>
+        <label for="conferencia4"><input type="checkbox" id="conferencia4" name="conferencias[]" value="conferencia4">Conferencia 4</label><br>
+
+
+        <label class="titulo">Talleres Elegidos (mínimo 3 opciones):</label>
+        <label for="taller1"><input type="checkbox" id="taller1" name="talleres[]" value="taller1">Taller 1</label>
+        <label for="taller2"><input type="checkbox" id="taller2" name="talleres[]" value="taller2">Taller 2</label>
+        <label for="taller3"><input type="checkbox" id="taller3" name="talleres[]" value="taller3">Taller 3</label>
+        <label for="taller4"><input type="checkbox" id="taller4" name="talleres[]" value="taller3">Taller 4</label><br>
+
+
+        <label class="titulo">Alojamiento Requerido:</label>
+        <input type="radio" id="alojamiento-si" name="alojamiento" value="si"> si
+        <input type="radio" id="alojamiento-no" name="alojamiento" value="no"> no<br>
+        <br>
+
+        <label for="fecha-llegada" class="titulo">Fecha de Llegada (después de 15/10/2023):</label>
+        <input type="date" id="fecha-llegada" name="fecha-llegada" min="2023-10-16"><br>
+
+        <label for="fecha-salida" class="titulo">Fecha de Salida (máximo 20/10/2023):</label>
+        <input type="date" id="fecha-salida" name="fecha-salida" max="2023-10-20"><br>
+
+        <label for="acompanantes" class="titulo">Número de Acompañantes (máximo 3):</label>
+        <input type="number" id="acompanantes" name="acompanantes" min="0" max="3"><br>
+
+        <label for="preferencias-especiales" class="titulo">Preferencias Especiales:</label>
+        <textarea id="preferencias-especiales" name="preferencias-especiales" rows="4"></textarea><br>
+
+        <label for="cv" class="titulo">Cargar CV (Opcional):</label>
+        <input type="file" id="cv" name="cv"><br>
+
+        <label for="foto-perfil" class="titulo">Cargar Foto de Perfil (Opcional):</label>
+        <input type="file" id="foto-perfil" name="foto-perfil"><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
